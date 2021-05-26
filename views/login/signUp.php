@@ -8,7 +8,7 @@
     <title>Twitch - S'inscrire</title>
 </head>
 <body>
-<form method="post" action="register.php">
+<form method="post" action="../../source/Controller/Security/register.php">
     <p>Nom d'utilisateur</p><input type="text" placeholder="Exemple" name="username">
     <br>
     <p>Mot de passe</p><input type="password" placeholder="Exemple" name="password">
