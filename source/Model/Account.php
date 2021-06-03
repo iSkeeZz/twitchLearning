@@ -12,11 +12,11 @@ class Account {
     protected DateTime $createdAt;
 
     /**
-     * @return DateTime
+     * @return string
      */
-    public function getCreatedAt(): DateTime
+    public function getCreatedAt(): string
     {
-        return $this->createdAt;
+        return $this->createdAt->format('Y-m-d H:i:s');
     }
 
     /**
@@ -84,11 +84,12 @@ class Account {
     }
 
     /**
-     * @return DateTime
+     * @return string
      */
-    public function getBirthday(): DateTime
+    public function getBirthday(): string
     {
-        return $this->birthday;
+
+        return $this->birthday->format('Y-m-d H:i:s');
     }
 
     /**

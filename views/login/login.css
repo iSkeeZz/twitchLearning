@@ -1,0 +1,338 @@
+@import "../global.css";
+
+body {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.modal .informationModal {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-radius: 5px;
+    background-color: var(--background-nav);
+    box-shadow: 3px 3px 3px #050505;
+    width: 400px;
+}
+
+.modal .informationModal .headerModal {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    padding: 10px 0px;
+}
+
+.modal .informationModal .headerModal img {
+    height: 40px;
+    width: 40px;
+}
+
+.modal .informationModal .switchModal {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.modal .informationModal .switchModal .switchText {
+    display: flex;
+    justify-content: start;
+    flex-direction: row;
+    align-items: center;
+    width: 90%;
+    height: 30px;
+    border-bottom: 1px solid var(--background-component);
+}
+
+.modal .informationModal .switchModal .switchText .signInContent {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    height: 100% !important;
+}
+
+.modal .informationModal .switchModal .switchText .signUpContent {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    height: 100% !important;
+}
+
+.modal .informationModal .switchModal .switchText .signInContent #signIn {
+    display: none;
+}
+
+.modal .informationModal .switchModal .switchText .signUpContent #signUp {
+    display: none;
+}
+
+.modal .informationModal .switchModal .switchText .signUpContent .signUpLabel {
+    margin-left: 15px;
+}
+
+.modal .informationModal .switchModal .switchText .signUpContent .signUpLabel {
+    flex-grow: 1 !important;
+}
+
+.modal .informationModal .switchModal .switchText .signInContent .signInLabel {
+    flex-grow: 1 !important;
+}
+
+.modal .informationModal .switchModal .switchText .signInContent .selectedSignIn {
+    display: none;
+    flex-grow: 0 !important;
+    height: 0.2rem;
+    margin-bottom: -0.1rem;
+    background-color: #9147ff;
+}
+
+.modal .informationModal .switchModal .switchText .signUpContent .selectedSignUp {
+    display: none;
+    flex-grow: 0 !important;
+    height: 0.2rem;
+    margin-bottom: -0.1rem;
+    background-color: #9147ff;
+    margin-left: 15px;
+}
+
+.modal .informationModal .switchModal .switchText .signInContent #signIn:checked ~ .signInLabel {
+    color: #9147ff;
+}
+
+.modal .informationModal .switchModal .switchText .signUpContent #signUp:checked ~ .signUpLabel {
+    color: #9147ff;
+}
+
+.modal .informationModal .switchModal .switchText .signInContent #signIn:checked ~ .selectedSignIn {
+    display: block;
+}
+
+.modal .informationModal .switchModal .switchText .signUpContent #signUp:checked ~ .selectedSignUp {
+    display: block;
+}
+
+.modal .informationModal form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: left;
+    padding: 10px 5% 20px;
+}
+
+.modal .informationModal form .contentForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px 0px;
+    width: 100%;
+}
+
+.modal .usernameContentSignUp {
+    position: relative;
+    overflow-y: hidden;
+    transition: padding-bottom 0.2s ease-in-out;
+}
+
+.modal .userInformation {
+    font-size: 10px;
+    color: var(--textColor);
+    opacity: 0.5;
+    padding: 5px;
+}
+
+.modal .usernameContentSignUp > .userInformation {
+    margin: 0;
+    position: absolute;
+}
+
+.usernameContentSignUp:focus-within {
+    padding-bottom: 2em;
+}
+input {
+    width: calc(100% - 26px);
+    height: auto;
+    padding: 5px 10px;
+    background-color: var(--background-component);
+    border: 2px solid var(--background-component);
+    border-radius: 2px;
+    color: var(--textColor);
+    text-decoration: none;
+    outline: none;
+    font-size: 12px;
+}
+input[type=submit] {
+    width: calc(100% - 2px);
+    height: auto;
+    padding: 5px 10px;
+    background-color: var(--twitch-main-color);
+    border: 2px solid var(--twitch-main-color);
+    border-radius: 2px;
+    color: var(--textColor);
+    font-weight: bold;
+    text-decoration: none;
+    outline: none;
+    font-size: 12px;
+}
+input[type=submit]:hover{
+    border: 2px solid var(--twitch-main-color-hover);
+    background-color: var(--twitch-main-color-hover);
+}
+input:hover {
+    border: 2px solid var(--background-component-hover);
+}
+input:focus {
+    border: 2px solid var(--twitch-main-color);
+    background-color: black;
+}
+input.error {
+    border: 2px solid var(--error-color);
+}
+.errorMsg{
+    display: none;
+    font-size: 10px;
+    color: var(--error-color-text);
+    padding: 2px 5px;
+    font-family: Arial;
+}
+input.error + .errorMsg{
+    display: block;
+}
+.birthdateInput.error + .errorMsg{
+    display: block;
+}
+input.error:focus {
+    border: 2px solid var(--error-color);
+    background-color: black;
+}
+
+.modal .birthdateInput {
+    width: calc(100% - 2px);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+input[type=number] {
+    width: calc(20% - 4px);
+    height: auto;
+    padding: 5px 10px;
+    background-color: var(--background-component);
+    border: 2px solid var(--background-component);
+    border-radius: 2px;
+    color: var(--textColor);
+    text-decoration: none;
+    outline: none;
+    font-size: 12px;
+    appearance: textfield;
+}
+input[type=number]:hover {
+    border: 2px solid var(--background-component-hover);
+}
+input[type=number]:focus {
+    border: 2px solid var(--twitch-main-color);
+    background-color: black;
+}
+
+input[type=number].error {
+    border: 2px solid var(--error-color);
+}
+input[type=number].error:focus {
+    border: 2px solid var(--error-color);
+    background-color: black;
+}
+input[type=number].error:hover {
+    border: 2px solid var(--error-color);
+}
+
+select {
+    width: calc(45% - 4px);
+    height: auto;
+    padding: 5px 10px;
+    background-color: var(--background-component);
+    border: 2px solid var(--background-component);
+    border-radius: 2px;
+    color: var(--textColor);
+    text-decoration: none;
+    outline: none;
+    font-size: 12px;
+}
+select.error {
+     border: 2px solid var(--error-color);
+ }
+select:hover {
+    border: 2px solid var(--background-component-hover);
+}
+select.error:hover {
+    border: 2px solid var(--error-color);
+}
+select:focus {
+    border: 2px solid var(--twitch-main-color);
+    background-color: black;
+}
+select.error:focus {
+    border: 2px solid var(--error-color);
+    background-color: black;
+}
+.modal .politiqueUser {
+    font-size: 10px;
+    text-align: center;
+    opacity: 0.5;
+    color: var(--textColor);
+}
+
+.modal .politiqueUser > a {
+    font-size: 10px;
+    text-align: center;
+    opacity: 1;
+    color: var(--twitch-main-color);
+}
+
+a {
+    margin-top: -5px;
+    font-size: 10px;
+    text-align: left;
+    color: var(--twitch-main-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.errorsContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+}
+.errorBox {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    background-color: #18181b;
+    border-radius: 5px;
+    border: 2px solid var(--error-color);
+    border-left-width: 4px;
+    width: calc(90% - 6px);
+}
+.errorsContent .errorBox img {
+    height: 25px;
+    width: 25px;
+    padding: 5px 7.5px;
+}
+.errorsContent .errorBox p {
+    font-size: 14px;
+    color: var(--textColor);
+    opacity: 0.7;
+    padding: 5px 15px;
+}

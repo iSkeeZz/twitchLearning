@@ -20,7 +20,7 @@
         </div>
         <div class="headerRight">
             <div class="logButton">
-                <a class="SignIn" href="#">Se connecter</a>
+                <a class="SignIn" href="../login/signIn.php">Se connecter</a>
                 <a class="SignUp" href="../login/signUp.php">S'inscrire</a>
             </div>
             <div class="groupMenu">

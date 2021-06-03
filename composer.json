@@ -1,6 +1,8 @@
 {
     "name": "skeezz/twitch-learning",
     "description": "Revue de plusieurs langage via la cr\u0000ation de l'interface de Twitch",
-    "require": {},
+    "require": {
+      "ext-pdo": "*"
+    },
     "autoload": { "psr-4": { "App\\": "source/" } }
 }
